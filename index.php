@@ -1,97 +1,88 @@
 <pre>
-  <?php
-  echo "
-  <h1>PHP Associative Arrays</h1>
-Associative arrays use named keys, instead of numeric indices.
-  <br>";
-  $car = array("brand"=>"Ford", "model"=>"Mustang", "year"=>1964);
-  var_dump($car);
-  echo "<hr>";
-  echo "
-  <h1>Access Array Item</h1>
-To access a specific array item, refer to the key name.<br>
-  ";
-  echo $car['model'];
-  echo "<hr>";
-  echo "
- <h1> Change Value of Array Item</h1>
-To change the value of an array item, use the key name:
-  <br>";
-  $car["year"] = 2024;
-  var_dump($car);
-  echo "<hr>";
-  echo "
-  <h1>Loop Through an Associative Array</h1>
-To loop through and print all the values of an associative array, use a foreach loop, like this:<br>
-  ";
-  foreach($car as $x => $y) {
-    echo "$x: $y <br>";
-  }
-  echo "<hr>";
+<?php
+echo "<h1>PHP - Array Sorting Functions</h1>
+The items in an array can be sorted in alphabetical or numerical order, descending or ascending.<br>
 
-  $cars = ["Volvo", "BMW", "Toyota"];
-  var_dump($cars);
-   echo "<hr>";
-  echo "
-  <h1>Multiple Lines</h1>
-Line breaks are not important, so an array declaration can span multiple lines:<br>";
-  $school = [
-  "Primary1",
-  "Secondary",
-  "University",
-  ];
-  var_dump($school);
+Here are the main PHP array sorting functions:<br>
 
- echo "<hr>";
-  echo "
-  <h1>Array Keys</h1>
-When creating indexed arrays the keys are given automatically, starting at 0 and increased by 1 for each item, so the array above could also be created with keys:<br>";
-  $school = [
-  0 => "Primary1",
-  1 => "Secondary",
-  2 => "University"
-  ];
-  var_dump($school);
-echo "As you can see, indexed arrays are the same as associative arrays, but associative arrays have names instead of numbers:<br>";
-
-$mycar = [
-  "brand" => "Ford",
-  "model" => "Mustand",
-  "year" => 1964
-];
-var_dump($mycar);
-echo "<hr>";
-echo "
-<h1>Declare Empty Array</h1>
-You can declare an empty array first, and add items to it later:<br>
-";
-$cars = [];
-$cars[0] = "Volvo";
-$cars[1] = "BMW";
-$cars[2] = "Toyota";
-
-var_dump($cars);
-
-echo "<hr>";
-echo "The same goes for associative arrays, you can declare the array first, and then add items to it:<br>";
-
-$myCar = [];
-$myCar["brand"] = "Ford";
-$myCar["model"] = "Mustang";
-$myCar["year"] = "1996";
-var_dump($myCar);
-  
-echo "<hr>";
-echo "
-<h1>Mixing Array Keys</h1>
-You can have arrays with both indexed and named keys:<br>
+<li>sort() - sorts an indexed array in ascending order</li>
+<li>rsort() - sorts an indexed array in descending order</li>
+<li>asort() - sorts an associative array in ascending order, according to the value</li>
+<li>ksort() - sorts an associative array in ascending order, according to the key</li>
+<li>arsort() - sorts an associative array in descending order, according to the value</li>
+<li>krsort() - sorts an associative array in descending order, according to the key</li>
 ";
 
-$myArr = [];
-$myArr[0] = "apples";
-$myArr[1] = "bananas";
-$myArr["fruit"] = "cherries";
+echo "<h2>PHP sort() - Sort Array in Ascending Order</h2>
+The sort() function sorts an indexed array in ascending order.<br>
+Sort the elements of the cars array in ascending alphabetical order:<br>
+";
+$cars = array("Volvo", "BMW", "Toyota");
+sort($cars);
+print_r($cars);
+echo "<hr>";
 
-var_dump($myArr);
-  ?>
+echo "Sort the elements of the numbers array in ascending numerical order:<br>";
+$numbers = array(4, 6, 2, 22, 11);
+sort($numbers);
+print_r($numbers);
+
+echo "<hr>";
+echo "
+<h2>PHP rsort() - Sort Array in Descending Order</h2>
+The rsort() function sorts an indexed array in descending order.<br>
+Sort the elements of the cars array in descending alphabetical order:<br>
+";
+$cars = array("Volvo", "BMW", "Toyota");
+rsort($cars);
+print_r($cars);
+echo "<hr>";
+
+echo "
+Sort the elements of the numbers array in descending numerical order:<br>
+";
+$numbers = array(4, 6, 2, 22, 11);
+rsort($numbers);
+print_r($numbers);
+
+echo "<hr>";
+echo "
+<h2>PHP asort() and arsort() - Sort Associative Array (value)</h2>
+The asort() function sorts an associative array in ascending order, according to the value.<br>
+Sort an associative array in ascending order, according to the value:<br>
+";
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+asort($age);
+print_r($age);
+
+echo "<hr>";
+echo "
+The arsort() function sorts an associative array in descending order, according to the value.<br>
+Sort an associative array in descending order, according to the value:<br>
+";
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+arsort($age);
+print_r($age);
+
+echo "<hr>";
+echo "
+<h2>PHP ksort() and krsort() - Sort Associative Array (key)</h2>
+The ksort() function sorts an associative array in ascending order, according to the key.<br>
+Sort an associative array in ascending order, according to the key:<br>
+";
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+ksort($age);
+print_r($age);
+echo "<hr>";
+echo "The krsort() function sorts an associative array in descending order, according to the key.<br>
+Sort an associative array in descending order, according to the key:<br>
+";
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+krsort($age);
+print_r($age);
+
+
+
+
+?>
 </pre>
